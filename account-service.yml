@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: account-service
+
+bank:
+  name: Digital Bank UCSAL
+  max-daily-transfer: 5000.00
+  support-email: support@digitalbank.com
+  features:
+    pix-enabled: true
+    international-transfer: false
+    ted-enabled: true
+    doc-enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.bank: DEBUG

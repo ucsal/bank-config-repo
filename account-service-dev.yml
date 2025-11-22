@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bank_dev
+    username: dev_user
+    password: dev_password_123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+bank:
+  name: Digital Bank UCSAL - DEVELOPMENT
+  max-daily-transfer: 10000.00
+  api:
+    external-validation-url: http://localhost:9090/validate
+    timeout: 5000
+  features:
+    pix-enabled: true
+    international-transfer: true
+    ted-enabled: true
+    doc-enabled: true
+
+logging:
+  level:
+    root: DEBUG
+    com.bank: TRACE
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
