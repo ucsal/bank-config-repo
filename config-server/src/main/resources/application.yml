@@ -1,0 +1,35 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ucsal/bank-config-repo.git
+          default-label: main
+          clone-on-start: true
+          timeout: 10
+          force-pull: true
+          search-paths: configs  # ← ADICIONE ESTA LINHA
+  
+  security:
+    user:
+      name: configadmin
+      password: admin123
+
+encrypt:
+  key: MySecretKey123456789012345678901234567890123456789012345678
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
