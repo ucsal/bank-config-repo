@@ -14,7 +14,7 @@ spring:
 
 bank:
   name: Digital Bank UCSAL - DEVELOPMENT
-  max-daily-transfer: 10000.00
+  max-daily-transfer: 15000.00
   api:
     external-validation-url: http://localhost:9090/validate
     timeout: 5000
